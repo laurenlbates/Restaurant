@@ -1,0 +1,25 @@
+Package: Restauant
+Type: Package
+Title: Restaurant System
+Version: 0.0.0.9000
+Authors@R: c(
+    person(
+      "Lauren", "Bates",
+      email = "lbates4@usf.edu",
+      role = c("aut", "cre")
+    )
+  )
+Description: The package is created for managers, servers, and bartenders at a restaurant. 
+    The main goal of this package is to create a restaurant system, complete with daily 
+    check-out reports, the ability to clock in and out, and create the menu. Additionally, 
+    owners and managers can create a monthly report displaying restaurant sales. Through 
+    the monthly sales reports, managers can establish which months are busiest in the 
+    restaurant. Understanding the busiest times of the year allow the managers to prepare 
+    for these times by hiring more staff and ordering more inventory. The package provides 
+    BLANK unique functions for the restaurant. The packages uses BLANK external libraries 
+    or dependencies, such as devtools, ggplot2, methods, and BLANK. 
+Depends: R (>= 3.1.2)
+Imports: ggplot2, dplyr, devtools, methods
+License: CC0
+Encoding: UTF-8
+LazyData: true
