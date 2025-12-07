@@ -1,0 +1,56 @@
+---
+title: "The Final"
+author: "metadata"
+date: "2025-12-06"
+output: html_document
+---
+
+## LIS4370: R Programming Final
+
+The Restaurant package is created for managers, servers, and bartenders at a restaurant. The object systems included in this package are mainly S3 and S4. The corresponding methods include generic functions, such as print(). The main goal of this package is to create a restaurant system, complete with daily check-out reports, the ability to clock in and out, and create the menu. Additionally, 
+owners and managers can create a monthly report displaying restaurant sales. Through 
+the monthly sales reports, managers can establish which months are busiest in the 
+restaurant. Understanding the busiest times of the year allow the managers to prepare 
+for these times by hiring more staff and ordering more inventory. The package provides 
+BLANK unique functions for the restaurant.
+
+S4 classes define formal class structures in R, using setClass(). These structures include the names and variables. For the restaurant, I will define, "Employee," "Sales," "Tipout," "Checkout Report," "HoursLog," and "Restaurant." These defined classes will be used in the unique functions within the package.
+
+## The Daily Reports
+
+After servers and bartenders are done with their shifts, they print their checkout report. The report displays the date, employee, their food and bar sales, the tips they made before and after tipout, how much they tipped the food runner and bartender, and their net tips. Servers tip out the food runner and bartender at the end of their shift. The bartenders only tip out the food runners. These report show the servers/bartenders how much they made and allow managers to do their closing duties quicker.
+
+The servers and bartenders will input their sales and tips into the report() function. The closeout() function will return their tip out to bar and food runner, sales, and net tips. When bartenders and servers clock out it will trigger the report() function.
+
+*Clock In/Out*
+
+Servers, bartenders, and food runners can clock in and out, using the clock_in() and clock_out() functions. The clock_out() function will also trigger the report() function, but only for servers and bartenders, food runners can only clock in and out. 
+
+*The Menu*
+
+An important aspect of every restaurant is their menu. The create_menu() function, makes the restaurant menu, which includes the name, type, and price of the item. The type would be either a food or drink. Managers can then add_item() to the menu, which has the same variables as the create_menu() function. Managers can also remove items from the menu with remove_item(). Finally, the print_menu() prints the menu by type of item. 
+
+## Monthly Sales Reports
+
+The monthly report displays a summary report, popular drinks and foods of the month, and a scatter plot with the sales and line of regression. The monthly_plot() displays the sales with a line of regression. Through the dates and the line of regression, managers are able to see trends in sales, including which months the restaurant is busiest. 
+
+
+```{Testing Package}
+
+library(Restaurant)
+
+tipout_percentages <- new("Tipout", food_tipout_percent = 0.02, bar_tipout_percent = 0.05)
+
+emp <- new("Server", id = 1, name = "Wanda")
+sales <- new("Sales", employee = emp, date = Sys.Date(),
+             food_sales = 1209, bar_sales = 326, tips = 401)
+
+emp <- new("Bartender", id = 2, name = "Cosmo")
+sales <- new("Sales", employee = emp, date = Sys.Date(),
+             food_sales = 199, bar_sales = 801, tips = 222)
+
+report(emp, sales, tipout_percentages)
+
+```
+
+The package uses CC0 license.
