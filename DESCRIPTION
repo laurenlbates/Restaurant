@@ -1,4 +1,4 @@
-Package: Restauant
+Package: Restaurant
 Type: Package
 Title: Restaurant System
 Version: 0.0.0.9000
@@ -20,6 +20,8 @@ Description: The package is created for managers, servers, and bartenders at a r
     or dependencies, such as devtools, ggplot2, methods, and BLANK. 
 Depends: R (>= 3.1.2)
 Imports: ggplot2, dplyr, devtools, methods
+Roxygen: list(markdown = TRUE)
 License: CC0
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.3
